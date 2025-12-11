@@ -53,6 +53,7 @@ pipeline {
               echo "Deployed.."
               echo "$GREETING"
               sleep 10
+              echo "Configured Webhooks"
               """
             }
         }
