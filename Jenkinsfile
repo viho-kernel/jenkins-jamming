@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        node {
+            label 'Agent-1'
+        }
+    }
 
     stages {
         stage('Build') {
@@ -17,5 +21,19 @@ pipeline {
                 echo 'Deploying....'
             }
         }
+    }
+
+    post {
+        always {
+            echo "I am Forever"
+        }
+        failure {
+            echo "this runs when pipeline is failed :( "
+        }
+
+        sucess {
+            echo "This build is successfull :)"
+        }
+
     }
 }
