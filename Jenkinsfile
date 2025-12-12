@@ -51,6 +51,8 @@ pipeline {
 
         success {
             echo 'Pipeline executed successfully.'
+            echo "Deployed version: ${params.VERSION}"
+            echo "Feeling happy about the deployment!"
         }
 
         failure {
