@@ -26,7 +26,7 @@ pipeline {
             echo 'I will always run!'
         }
         success {
-            echo "The ${params.DEPLOY_ENV} environment pipeline is succeeded!"
+            echo "The ${params.DEPLOY_ENV} ${DEPLOY_ENV} environment pipeline is succeeded!"
         }
         failure {
             echo 'The pipeline failed ):-:('
