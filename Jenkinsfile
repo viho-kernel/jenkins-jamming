@@ -4,6 +4,11 @@ pipeline {
         APP_NAME = "Roboshop"
         DEPLOY_ENV = "stagging"
     }
+    parameters {
+         string(name: 'DEPLOY_ENV', defaultValue: 'staging', description: 'Target environment')
+        choice(name: 'VERSION', choices: ['v1', 'v2', 'v3'], description: 'Select version')
+        booleanParam(name: 'DEBUG_MODE', defaultValue: false, description: 'Enable debug logs?')
+    }
     stages {
         stage('Build') {
             steps {
@@ -21,7 +26,7 @@ pipeline {
             echo 'I will always run!'
         }
         success {
-            echo "The ${DEPLOY_ENV} environment pipeline is succeeded!"
+            echo "The ${params.DEPLOY_ENV} environment pipeline is succeeded!"
         }
         failure {
             echo 'The pipeline failed ):-:('
