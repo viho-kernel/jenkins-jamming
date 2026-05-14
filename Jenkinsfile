@@ -11,4 +11,13 @@ pipeline {
             }
         }
     }
+//post build
+    post { 
+        always { 
+            echo 'I will always run!'
+        }
+        success {
+            echo 'The pipeline succeeded!'
+        }
+    }
 }
