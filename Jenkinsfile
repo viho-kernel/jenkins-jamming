@@ -24,7 +24,7 @@ pipeline {
             echo "The ${DEPLOY_ENV} environment pipeline is succeeded!"
         }
         failure {
-            echo 'The pipeline failed :('
+            echo 'The pipeline failed ):-:('
         }
     }
 }
